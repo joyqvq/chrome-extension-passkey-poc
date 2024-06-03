@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Passkey Login Extension",
+    "version": "1.0",
+    "description": "A Chrome extension for passkey login using WebAuthn.",
+    "permissions": [
+      "activeTab",
+      "identity",
+      "identity.email",
+      "storage"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
